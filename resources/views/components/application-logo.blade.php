@@ -1,0 +1,1 @@
+<img src="{{asset('imgs/plastic-surgery.png')}}" alt="" {{ $attributes }}>
