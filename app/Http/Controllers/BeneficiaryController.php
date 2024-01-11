@@ -39,6 +39,6 @@ class BeneficiaryController extends Controller
         $beneficiary = DB::table('beneficiaries')
                            ->where('id','=',$id)
                            ->get();
-        return view('admin.beneficiary',['beneficiary'=>$beneficiary]);
+        return view('admin.beneficiary_details',['beneficiary'=>$beneficiary]);
     }
 }
