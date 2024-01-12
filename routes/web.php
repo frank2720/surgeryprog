@@ -19,14 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/add-beneficiary', function () {
-    return view('admin/forms/beneficiary');
-})->name('add-beneficiary');
-Route::post('/post-beneficiary', [BeneficiaryController::class, 'store'])->name('post-beneficiary');
-Route::get('/dashboard', [BeneficiaryController::class, 'show'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/beneficiary/{id}', [BeneficiaryController::class, 'view'])->name('beneficiary.details');
-
 Route::middleware('auth')->group(function () {
+    //beneficiary routes
+    Route::get('/dashboard', [BeneficiaryController::class, 'show'])->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/add-beneficiary', [BeneficiaryController::class, 'add'])->name('add-beneficiary');
+    Route::post('/post-beneficiary', [BeneficiaryController::class, 'store'])->name('post-beneficiary');
+    Route::get('/beneficiary/{id}', [BeneficiaryController::class, 'view'])->name('beneficiary.details');
+   /* Route::get('/beneficiary/{id}/edit', [BeneficiaryController::class, 'edit'])->name('beneficiary.details.edit');
+    Route::put('/update-beneficiary', [BeneficiaryController::class, 'update'])->name('update-beneficiary');*/
+
+    Route::resource('beneficiary', BeneficiaryController::class)
+        ->only(['edit', 'update']);
+
+    //profile routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

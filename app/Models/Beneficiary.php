@@ -18,4 +18,15 @@ class Beneficiary extends Model
             $model->beneficiary_id = 'SurgeryProg#' . (static::count() + 1);
         });
     }
+
+    protected $fillable = [
+
+        'firstname',
+        'lastname',
+        'gender',
+        'age',
+        'contact',
+        'history',
+
+    ];
 }

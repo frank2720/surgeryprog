@@ -23,7 +23,7 @@
             <td class="border border-l-0 px-4 py-2 text-gray-900">{{$beneficiary->age}}</td>
             <td class="border border-l-0 px-4 py-2 text-center">
               <span class="text-red-700"><button class="fa-solid fa-trash focus:text-gray-900 focus:outline-none"></button></span>
-              <span class="ml-2 text-yellow-500"><button class="fa-solid fa-pen focus:text-gray-900 focus:outline-none"></button></span>
+              <span class="ml-2 text-yellow-500"><a class="fa-solid fa-pen focus:text-gray-900 focus:outline-none" href="{{route('beneficiary.edit', ['beneficiary'=>$beneficiary->id])}}"></a></span>
               <span class="ml-2"><a class="fa-regular fa-eye focus:text-gray-900 focus:outline-none" href="{{route('beneficiary.details',['id'=>$beneficiary->id])}}"></a></span>
               <span class="text-blue-600 ml-2"><button class="fa-solid fa-download focus:text-gray-900 focus:outline-none"></button></span>
           </td>

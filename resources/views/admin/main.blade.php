@@ -9,7 +9,7 @@
   <link rel="icon" type="image/x-icon" href="{{asset('imgs/plastic-surgery.png')}}"> 
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <script src="https://kit.fontawesome.com/3f96f27cdc.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 </head>
 <body class="bg-gray-100">
 

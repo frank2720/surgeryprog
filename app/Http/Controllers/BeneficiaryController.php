@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beneficiary;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -12,7 +13,7 @@ class BeneficiaryController extends Controller
 
     public function add():View
     {
-        return view('admin.beneficiary');
+        return view('admin.forms.beneficiary_add');
     }
 
     public function store(Request $request)
@@ -40,5 +41,33 @@ class BeneficiaryController extends Controller
                            ->where('id','=',$id)
                            ->get();
         return view('admin.beneficiary_details',['beneficiary'=>$beneficiary]);
+    }
+
+    public function edit(Beneficiary $beneficiary):View
+    {
+
+        return view('admin.forms.beneficiary_edit', [
+
+            'beneficiary' => $beneficiary,
+
+        ]);
+    }
+
+    public function update(Request $request, Beneficiary $beneficiary):RedirectResponse
+    {
+        $validated = $request->validate([
+
+            'firstname' => 'required|string|max:255',
+            'lastname'=>'required|string|max:255',
+            'gender'=>'required|string|max:255',
+            'age'=>'required|integer|max:50',
+            'contact'=>'required|string|max:255',
+            'medical_history'=>'required|string',
+
+        ]);
+
+        $beneficiary->update($validated);
+
+        return redirect(route('dashboard'));
     }
 }
