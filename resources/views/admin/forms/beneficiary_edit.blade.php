@@ -239,6 +239,7 @@
           </div>
           <div class="col-75">
             <select id="gender" name="gender">
+              <option value="{{ old('gender', $beneficiary->gender) }}">{{ old('lastname', $beneficiary->gender) }}</option>
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other</option>
@@ -271,7 +272,6 @@
         </div>
         <div class="row">
           <input type="submit" value="Submit">
-          <a href="{{ route('dashboard') }}">{{ __('Cancel') }}</a>
         </div>
     </form>
       </div> 

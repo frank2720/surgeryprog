@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/update-beneficiary', [BeneficiaryController::class, 'update'])->name('update-beneficiary');*/
 
     Route::resource('beneficiary', BeneficiaryController::class)
-        ->only(['edit', 'update']);
+        ->only(['edit', 'update','destroy']);
 
     //profile routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

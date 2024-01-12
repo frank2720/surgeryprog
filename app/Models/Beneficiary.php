@@ -15,7 +15,7 @@ class Beneficiary extends Model
 
         // Set beneficiary_id before creating the record
         static::creating(function ($model) {
-            $model->beneficiary_id = 'SurgeryProg#' . (static::count() + 1);
+            $model->beneficiary_id = 'SurgeryProg#' . hexdec(uniqid());
         });
     }
 

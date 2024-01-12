@@ -70,4 +70,18 @@ class BeneficiaryController extends Controller
 
         return redirect(route('dashboard'));
     }
+
+    public function destroy(Beneficiary $beneficiary): RedirectResponse
+
+    {
+
+ 
+
+        $beneficiary->delete();
+
+ 
+
+        return redirect(route('dashboard'));
+
+    }
 }
