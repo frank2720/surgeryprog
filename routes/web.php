@@ -28,6 +28,9 @@ Route::middleware('auth')->group(function () {
    /* Route::get('/beneficiary/{id}/edit', [BeneficiaryController::class, 'edit'])->name('beneficiary.details.edit');
     Route::put('/update-beneficiary', [BeneficiaryController::class, 'update'])->name('update-beneficiary');*/
 
+    Route::post('/beneficiary/view-pdf', [BeneficiaryController::class,'download_beneficiaries_PDF'])->name('view.pdf');
+    Route::post('/beneficiary/view-pdf/{id}', [BeneficiaryController::class,'download_beneficiary_PDF'])->name('beneficiary.pdf');
+
     Route::resource('beneficiary', BeneficiaryController::class)
         ->only(['edit', 'update','destroy']);
 

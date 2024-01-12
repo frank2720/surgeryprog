@@ -1,7 +1,19 @@
 @extends('admin.main')
 @section('content')
-<a href="{{route('add-beneficiary')}}" class="nav-link text-white"><i class="fa-solid fa-plus mr-2"></i>Add</a>
-<a href="" class="nav-link text-white"><i class="fa-solid fa-file-export mr-2"></i></i>Export all data</a>
+<div>
+  <a href="{{route('add-beneficiary')}}" class="nav-link text-white"><i class="fa-solid fa-plus mr-2"></i>Add</a>
+</div>
+<div></div><br>
+<div>
+  <form action="{{route('view.pdf')}}" method="POST" target="_blank">
+    @csrf
+    <span class="nav-link text-white text-xs mt-10">
+      <button class="fa-solid fa-file-export">
+        Export all data
+      </button>
+    </span>
+  </form>
+</div>
 <div class="container mt-4">
       <table class="table-auto w-full text-center">
         <thead>
@@ -32,7 +44,13 @@
               </form>
               <span class="ml-2 text-yellow-500"><a class="fa-solid fa-pen focus:text-gray-900 focus:outline-none" href="{{route('beneficiary.edit', ['beneficiary'=>$beneficiary->id])}}"></a></span>
               <span class="ml-2"><a class="fa-regular fa-eye focus:text-gray-900 focus:outline-none" href="{{route('beneficiary.details',['id'=>$beneficiary->id])}}"></a></span>
-              <span class="text-blue-600 ml-2"><button class="fa-solid fa-download focus:text-gray-900 focus:outline-none"></button></span>
+              <form action="{{route('beneficiary.pdf', ['id'=>$beneficiary->id])}}" method="POST" target="_blank">
+                @csrf
+                <span class="text-blue-600 ml-2">
+                  <button class="fa-solid fa-download focus:text-gray-900 focus:outline-none"></button>
+                </span>
+              </form>
+              
           </td>
             
          </tr>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beneficiary;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -83,5 +84,21 @@ class BeneficiaryController extends Controller
 
         return redirect(route('dashboard'));
 
+    }
+
+    public function download_beneficiaries_PDF()
+    {
+       $beneficiaries = Beneficiary::all();
+        $pdf = PDF::loadView('admin.pdfs.beneficiaries',['beneficiaries'=>$beneficiaries]);
+        return $pdf->download('beneficiaries.pdf');
+    }
+
+    public function download_beneficiary_PDF($id)
+    {
+        $beneficiary = DB::table('beneficiaries')
+                    ->where('id','=',$id)
+                    ->get();
+        $pdf = PDF::loadView('admin.pdfs.beneficiary',['beneficiary'=>$beneficiary]);
+        return $pdf->download('beneficiary.pdf');
     }
 }
