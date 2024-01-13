@@ -70,30 +70,72 @@
           border-radius: 5px;
           cursor: pointer;
         }
-      /* Updated style for left sidebar */
-    #sideBar {
-      background-color: #18AF79;
-    }
+          /* Updated style for left sidebar */
+        #sideBar {
+          background-color: #18AF79;
+        }
 
-    /* Added style for left sidebar navigation items */
-    #sideBar a {
-      display: block;
-      color: white;
-      padding: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
+        /* Added style for left sidebar navigation items */
+        #sideBar a {
+          display: block;
+          color: white;
+          padding: 10px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s;
+        }
 
-    /* Added hover effect for left sidebar navigation items */
-    #sideBar a:hover {
-      background-color: #18AF79;
-    }
+        /* Added hover effect for left sidebar navigation items */
+        #sideBar a:hover {
+          background-color: #18AF79;
+        }
 
-    /* Added icons for left sidebar navigation items */
-    #sideBar i {
-      margin-right: 10px;
-    }
+        /* Added icons for left sidebar navigation items */
+        #sideBar i {
+          margin-right: 10px;
+        }
+
+      .table-container {
+        overflow-x: auto;
+        background-color: white; /* Set the background color to white */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-top: 20px;
+        position: relative;
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .table th,
+      .table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      .table th {
+        background-color: #f2f2f2;
+      }
+
+      .table tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      .pagination {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .show-entries {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 10px;
+      }
 </style>
 </head>
 <body class="bg-gray-100">
