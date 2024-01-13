@@ -39,7 +39,7 @@
 
                 <label for="history">Medical History:</label>
                 <textarea name="medical_history" id="history">
-                  {{ old('history', $beneficiary->history) }}
+                  {{ old('medical_history', $beneficiary->history) }}
                 </textarea>
 
                 
@@ -50,7 +50,7 @@
         </div>
 
         <div class="action-bar">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Update">
         </div>
 
     </form>    

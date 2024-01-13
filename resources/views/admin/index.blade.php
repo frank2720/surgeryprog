@@ -14,6 +14,13 @@
     </span>
   </form>
 </div>
+
+@if(session('status'))
+      <div class="alert alert-success mt-4 mb-4">
+          {{ session('status') }}
+      </div>
+@endif
+
 <div class="table-container mt-4">
 
   <table class="table">

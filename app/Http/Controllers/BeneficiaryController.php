@@ -69,7 +69,7 @@ class BeneficiaryController extends Controller
 
         $beneficiary->update($validated);
 
-        return redirect(route('dashboard'));
+        return redirect(route('dashboard'))->with('status', 'Beneficiary information updated successfully');;
     }
 
     public function destroy(Beneficiary $beneficiary): RedirectResponse
