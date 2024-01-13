@@ -10,6 +10,91 @@
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <script src="https://kit.fontawesome.com/3f96f27cdc.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+<style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          max-width: 800px;
+          margin: 20px auto;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        .form-content {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+
+        .form-content > div {
+          flex: 1;
+        }
+
+        .heading h2 {
+          color: #333;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+          width: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          display: inline-block;
+        }
+
+        .action-bar {
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        input[type="submit"] {
+          background-color: #18AF79;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      /* Updated style for left sidebar */
+    #sideBar {
+      background-color: #18AF79;
+    }
+
+    /* Added style for left sidebar navigation items */
+    #sideBar a {
+      display: block;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    /* Added hover effect for left sidebar navigation items */
+    #sideBar a:hover {
+      background-color: #18AF79;
+    }
+
+    /* Added icons for left sidebar navigation items */
+    #sideBar i {
+      margin-right: 10px;
+    }
+</style>
 </head>
 <body class="bg-gray-100">
 
