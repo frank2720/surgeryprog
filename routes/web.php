@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeneficiaryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SurgeryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/beneficiary/{id}', [BeneficiaryController::class, 'view'])->name('beneficiary.details');
    /* Route::get('/beneficiary/{id}/edit', [BeneficiaryController::class, 'edit'])->name('beneficiary.details.edit');
     Route::put('/update-beneficiary', [BeneficiaryController::class, 'update'])->name('update-beneficiary');*/
+
+    //surgeries routes
+
+    Route::get('/surgeries', [SurgeryController::class, 'surgery_list'])->name('surgery.index');
+    Route::resource('surgery',SurgeryController::class)
+           ->only('create');
+   
 
     Route::post('/beneficiary/view-pdf', [BeneficiaryController::class,'download_beneficiaries_PDF'])->name('view.pdf');
     Route::post('/beneficiary/view-pdf/{id}', [BeneficiaryController::class,'download_beneficiary_PDF'])->name('beneficiary.pdf');

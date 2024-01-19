@@ -10,9 +10,9 @@ class SurgeryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function surgery_list()
     {
-        //
+        return view('admin.surgeries',['surgeries'=>Surgery::with('beneficiary')->get()]);
     }
 
     /**
@@ -20,7 +20,7 @@ class SurgeryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.forms.surgeries_add');
     }
 
     /**
