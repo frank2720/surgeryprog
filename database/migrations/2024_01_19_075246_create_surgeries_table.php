@@ -13,17 +13,16 @@ return new class extends Migration
     {
         Schema::create('surgeries', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string('beneficiary_id');
-            $table->date('date_done');
             $table->string('surgeon_name');
             $table->string('procedure_name');
             $table->string('outcome');
+            $table->longText('notes');
             $table->longText('procedure_details');
             $table->longText('pre_op_instructions');
             $table->longText('post_op_instructions');
-            $table->string('pre_op_images');
-            $table->string('post_op_images');
+            $table->string('pre_op_image_url');
+            $table->string('post_op_image_url');
+            $table->timestamps();
         });
     }
 
