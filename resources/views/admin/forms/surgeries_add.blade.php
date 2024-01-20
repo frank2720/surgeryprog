@@ -11,7 +11,7 @@
 
     <div class="container">
 
-      <form id="beneficiaryForm" method="post" action="{{route('post-beneficiary')}}">
+      <form id="beneficiaryForm" method="POST" action="{{ route('surgery.store') }}">
 
           @csrf
           <div class="form-content">

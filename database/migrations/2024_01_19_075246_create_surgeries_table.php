@@ -20,8 +20,8 @@ return new class extends Migration
             $table->longText('notes');
             $table->longText('procedure_details');
             $table->longText('pre_op_instructions');
-            $table->string('pre_op_image_url');
-            $table->string('post_op_image_url');
+            $table->string('pre_op_image_url')->nullable();
+            $table->string('post_op_image_url')->nullable();
             $table->timestamps();
         });
     }

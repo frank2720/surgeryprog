@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Beneficiary extends Model
 {
@@ -29,4 +30,9 @@ class Beneficiary extends Model
         'history',
 
     ];
+
+    public function surgeries():HasMany
+    {
+        return $this->hasMany(Surgery::class);
+    }
 }

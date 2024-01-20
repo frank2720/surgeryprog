@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Surgery;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class SurgeryController extends Controller
@@ -26,9 +27,19 @@ class SurgeryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request):RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'beneficiary_id'=>'required|string',
+            'surgeon_name'=>'required|string',
+            'procedure_name'=>'required|string',
+            'outcome'=>'required|string',
+            'notes'=>'required|string',
+            'procedure_details'=>'required|string',
+            'pre_op_instructions'=>'required|string',
+        ]);
+        Surgery::create($validated);
+        return redirect(route('surgery.index'))->with('status', 'surgery details added successfully');
     }
 
     /**

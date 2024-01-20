@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/surgeries', [SurgeryController::class, 'surgery_list'])->name('surgery.index');
     Route::resource('surgery',SurgeryController::class)
-           ->only('create');
+           ->only('create','store');
    
 
     Route::post('/beneficiary/view-pdf', [BeneficiaryController::class,'download_beneficiaries_PDF'])->name('view.pdf');
